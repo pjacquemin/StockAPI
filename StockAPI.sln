@@ -5,11 +5,11 @@ VisualStudioVersion = 17.7.34202.233
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StockAPI", "StockAPI\StockAPI.csproj", "{F95F9774-257B-49F5-ACA7-DB68FFFB58D8}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StockAPI.Logic", "Logic\StockAPI.Logic.csproj", "{61BE5B1D-A7B9-4B2C-8332-58344437D33C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StockAPI.Logic", "StockAPI.Logic\StockAPI.Logic.csproj", "{61BE5B1D-A7B9-4B2C-8332-58344437D33C}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StockAPI.Models", "DataModel\StockAPI.Models.csproj", "{43654B1D-4773-48EF-8492-200E4F93C841}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StockAPI.Models", "StockAPI.Models\StockAPI.Models.csproj", "{43654B1D-4773-48EF-8492-200E4F93C841}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StockAPI.Interfaces", "Data\StockAPI.Interfaces.csproj", "{1242C4AA-2306-4B15-A4FF-2710289B9DDD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StockAPI.Interfaces", "StockAPI.Interfaces\StockAPI.Interfaces.csproj", "{1242C4AA-2306-4B15-A4FF-2710289B9DDD}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StockAPI.UnitTesting", "StockAPI.UnitTesting\StockAPI.UnitTesting.csproj", "{202B696B-745C-4779-BED6-B98D6B2CB25A}"
 EndProject

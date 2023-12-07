@@ -15,8 +15,8 @@ namespace StockAPI.Data.EntityFramework
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Product>().ToTable("Product").HasMany(e => e.ProductStocks);
-            modelBuilder.Entity<Stock>().ToTable("Stock").HasMany(e => e.ProductStocks); ;
+            modelBuilder.Entity<Product>().ToTable("Product").HasMany(p => p.ProductStocks);
+            modelBuilder.Entity<Stock>().ToTable("Stock").HasMany(s => s.ProductStocks); ;
             modelBuilder.Entity<ProductStock>().ToTable("ProductStock").HasKey(ps => new { ps.ProductId, ps.StockId });
         }
     }

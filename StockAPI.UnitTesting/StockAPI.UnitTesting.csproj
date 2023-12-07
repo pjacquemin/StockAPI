@@ -24,7 +24,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Logic\StockAPI.Logic.csproj" />
+    <ProjectReference Include="..\StockAPI.Interfaces\StockAPI.Interfaces.csproj" />
+    <ProjectReference Include="..\StockAPI.Logic\StockAPI.Logic.csproj" />
+    <ProjectReference Include="..\StockAPI.Models\StockAPI.Models.csproj" />
   </ItemGroup>
 
 </Project>
