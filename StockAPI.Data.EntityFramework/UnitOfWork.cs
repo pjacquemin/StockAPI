@@ -1,22 +1,22 @@
 ﻿using StockAPI.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace StockAPI.Data.EntityFramework
 {
     public class UnitOfWork : IUnitOfWork
     {
-        private readonly StockContext _context;
+        private readonly StockDbContext _context;
         public IStockRepository StockRepository { get; }
         public IProductRepository ProductRepository { get; }
-        public UnitOfWork(StockContext context, IStockRepository stockRepository, IProductRepository productRepository) 
+        public UnitOfWork(StockDbContext context, IStockRepository stockRepository, IProductRepository productRepository) 
         {
             _context = context;
             StockRepository = stockRepository;
             ProductRepository = productRepository;
+        }
+
+        public async Task SaveChangesAsync()
+        {
+            await _context.SaveChangesAsync();
         }
     }
 }

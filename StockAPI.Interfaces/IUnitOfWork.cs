@@ -5,5 +5,6 @@ namespace StockAPI.Interfaces
     {
         IStockRepository StockRepository { get; }
         IProductRepository ProductRepository { get; }
+        Task SaveChangesAsync();
     }
 }

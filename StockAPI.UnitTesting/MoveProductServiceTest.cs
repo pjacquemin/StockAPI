@@ -1,22 +1,22 @@
 using Moq;
 using StockAPI.Interfaces;
-using StockAPI.Logic.StockService;
+using StockAPI.Logic.MoveProductService;
 using System.Web.Http;
 
 namespace StockAPI.UnitTesting
 {
-    public class StockServiceTest
+    public class MoveProductServiceTest
     {
-        private readonly StockService _stockService;
+        private readonly MoveProductService _moveProductService;
         private readonly Mock<IUnitOfWork> _unitOfWorkMock;
         private readonly Mock<IStockRepository> _stockRepositoryMock;
 
-        public StockServiceTest()
+        public MoveProductServiceTest()
         {
             _stockRepositoryMock = new Mock<IStockRepository>();
             _unitOfWorkMock = new Mock<IUnitOfWork>();
             _unitOfWorkMock.Setup(r => r.StockRepository).Returns(_stockRepositoryMock.Object);
-            _stockService = new StockService(_unitOfWorkMock.Object);
+            _moveProductService = new MoveProductService(_unitOfWorkMock.Object);
         }
 
         [Fact]
@@ -40,7 +40,7 @@ namespace StockAPI.UnitTesting
             int productId = 15;
             int quantity = 6;
 
-            MoveResult result = await _stockService.MoveProduct(stockId, productId, MoveTypeEnum.Add, quantity);
+            MoveResult result = await _moveProductService.MoveProduct(stockId, productId, MoveTypeEnum.Add, quantity);
 
             Assert.Equal(26, result.NewQuantity);
         }
@@ -67,7 +67,7 @@ namespace StockAPI.UnitTesting
             int productId = 15;
             int quantity = 6;
 
-            MoveResult result = await _stockService.MoveProduct(stockId, productId, MoveTypeEnum.Take, quantity);
+            MoveResult result = await _moveProductService.MoveProduct(stockId, productId, MoveTypeEnum.Take, quantity);
 
             Assert.Equal(14, result.NewQuantity);
         }
@@ -94,7 +94,7 @@ namespace StockAPI.UnitTesting
             int productId = 15;
             int quantity = -1;
 
-            Func<Task> act = () => _stockService.MoveProduct(stockId, productId, MoveTypeEnum.Take, quantity);
+            Func<Task> act = () => _moveProductService.MoveProduct(stockId, productId, MoveTypeEnum.Take, quantity);
 
             var exception = Assert.ThrowsAsync<ArgumentOutOfRangeException>(act);
         }
@@ -121,7 +121,7 @@ namespace StockAPI.UnitTesting
             int productId = 15;
             int quantity = 21;
 
-            Func<Task> act = () => _stockService.MoveProduct(stockId, productId, MoveTypeEnum.Take, quantity);
+            Func<Task> act = () => _moveProductService.MoveProduct(stockId, productId, MoveTypeEnum.Take, quantity);
 
             var exception = Assert.ThrowsAsync<InvalidOperationException>(act);
         }
@@ -148,7 +148,7 @@ namespace StockAPI.UnitTesting
             int productId = 14;
             int quantity = 21;
 
-            Func<Task> act = () => _stockService.MoveProduct(stockId, productId, MoveTypeEnum.Take, quantity);
+            Func<Task> act = () => _moveProductService.MoveProduct(stockId, productId, MoveTypeEnum.Take, quantity);
 
             var exception = Assert.ThrowsAsync<HttpResponseException>(act);
         }
@@ -175,7 +175,7 @@ namespace StockAPI.UnitTesting
             int productId = 14;
             int quantity = 15;
 
-            Func<Task> act = () => _stockService.MoveProduct(stockId, productId, MoveTypeEnum.Take, quantity);
+            Func<Task> act = () => _moveProductService.MoveProduct(stockId, productId, MoveTypeEnum.Take, quantity);
 
             var exception = Assert.ThrowsAsync<HttpResponseException>(act);
         }

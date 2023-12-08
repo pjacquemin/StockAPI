@@ -3,9 +3,9 @@ using StockAPI.Models;
 
 namespace StockAPI.Data.EntityFramework
 {
-    public class StockContext : DbContext
+    public class StockDbContext : DbContext
     {
-        public StockContext(DbContextOptions<StockContext> options) : base(options)
+        public StockDbContext(DbContextOptions<StockDbContext> options) : base(options)
         {
         }
 

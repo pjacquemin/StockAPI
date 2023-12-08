@@ -1,5 +1,5 @@
 ﻿
-namespace StockAPI.Logic.StockService
+namespace StockAPI.Logic.MoveProductService
 {
     public enum MoveTypeEnum
     {

@@ -20,7 +20,7 @@ namespace StockAPI
                 var services = scope.ServiceProvider;
                 try
                 {
-                    var context = services.GetRequiredService<StockContext>();
+                    var context = services.GetRequiredService<StockDbContext>();
                     DbInitializer.Initialize(context);
                 }
                 catch (Exception ex)

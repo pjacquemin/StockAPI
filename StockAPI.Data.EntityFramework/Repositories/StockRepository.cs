@@ -6,9 +6,9 @@ namespace StockAPI.Data.EntityFramework.Repositories
 {
     public class StockRepository : IStockRepository
     {
-        private readonly StockContext _context;
+        private readonly StockDbContext _context;
 
-        public StockRepository(StockContext context)
+        public StockRepository(StockDbContext context)
         {
             _context = context;
         }

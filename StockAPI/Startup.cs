@@ -16,7 +16,7 @@ namespace StockAPI
 
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<StockContext>(options =>
+            services.AddDbContext<StockDbContext>(options =>
                 options.UseSqlServer(@"Server=localhost\SQLEXPRESS;Database=StockManagement;Trusted_Connection=True;"));
 
             services.AddTransient<IProductRepository, ProductRepository>();
