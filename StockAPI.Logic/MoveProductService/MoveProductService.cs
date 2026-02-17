@@ -49,12 +49,7 @@ namespace StockAPI.Logic.MoveProductService
                 throw new ArgumentOutOfRangeException("quantity", "Quantity should be greater or equal to 0");
             }
 
-            if (_stockModel == null)
-            {
-                throw new HttpResponseException(HttpStatusCode.NotFound);
-            }
-
-            if (_productStockModel == null)
+            if (_stockModel == null || _productStockModel == null)
             {
                 throw new HttpResponseException(HttpStatusCode.NotFound);
             }
